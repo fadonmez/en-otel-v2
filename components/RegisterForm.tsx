@@ -53,7 +53,7 @@ export default function RegisterForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      const res = await fetch('/api/user', {
+      const res = await fetch(`${process.env.API_URL}/api/user`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
