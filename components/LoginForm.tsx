@@ -3,25 +3,23 @@ import React, { useState } from 'react';
 import { Input } from './ui/input';
 import Image from 'next/image';
 import Link from 'next/link';
-// import { authenticate } from '@/lib/actions/auth.action';
+import { authenticate } from '@/lib/actions/user.action';
 import { useRouter } from 'next/navigation';
-
-interface resType {
-  message: string;
-}
 
 const LoginForm = () => {
   const router = useRouter();
   const [error, setError] = useState('');
   const handleSubmit = async (formData: any) => {
-    // try {
-    //   const res: resType = await authenticate(formData);
-    //   setError(res?.message);
-    //   console.log(res);
-    //   router.push('/');
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const res: any = await authenticate(formData);
+      setError(res?.message);
+      if (res?.message) {
+        return;
+      }
+      router.push('/');
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <form

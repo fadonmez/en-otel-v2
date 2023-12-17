@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/nashira.webp')",
+      },
       colors: {
         brand: '#ecebff',
         brandPrimary: '#6060FD',

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className='grid grid-cols-2 h-screen place-items-center bg-red-400'>
+    <div className='grid grid-cols-2 h-screen place-items-center '>
       <div className='bg-green-500 max-w-xs p-4 rounded-lg'>
         <h1 className='text-3xl font-semibold'>EnOtel'e Hoşgeldin</h1>
         <p className='mt-5 '>
