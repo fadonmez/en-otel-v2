@@ -7,7 +7,6 @@ import React from 'react';
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   const session = await auth();
-
   let user;
   if (session) {
     user = await db.user.findUnique({
