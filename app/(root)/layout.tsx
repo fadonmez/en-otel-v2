@@ -7,7 +7,6 @@ import React from 'react';
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   const session = await auth();
-  console.log(session);
   let user;
   if (!session) {
     useStore.setState({ user: null });

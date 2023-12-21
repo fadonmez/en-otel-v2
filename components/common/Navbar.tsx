@@ -15,10 +15,9 @@ import { redirect } from 'next/navigation';
 import { useStore } from '@/src/store';
 const Navbar = () => {
   const user = useStore.getState().user;
-  console.log('navbar', user);
   return (
     <div className='bg-blue-300 items-center '>
-      <div className='container flex items-center justify-between py-4'>
+      <div className='container  flex items-center justify-between py-4'>
         <Link href='/'>
           <h1 className='text-3xl font-bold'>EnOtel</h1>
         </Link>
@@ -35,9 +34,18 @@ const Navbar = () => {
                   Profile
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
+              <DropdownMenuItem asChild className='p-0'>
+                <Link className='p-2  w-full' href='/rooms'>
+                  Rooms
+                </Link>
+              </DropdownMenuItem>
+              {user.isAdmin && (
+                <DropdownMenuItem asChild className='p-0'>
+                  <Link className='p-2  w-full' href='/admin'>
+                    Admin Panel
+                  </Link>
+                </DropdownMenuItem>
+              )}
               <DropdownMenuItem className='p-0'>
                 <form
                   className='w-full'

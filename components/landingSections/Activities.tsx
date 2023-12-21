@@ -1,6 +1,7 @@
 import React from 'react';
-import ActivityCard from '../common/ActivityCard';
+
 import { activities } from '@/constants';
+import ActivityCard from '../Cards/ActivityCard';
 
 const Activities = () => {
   return (

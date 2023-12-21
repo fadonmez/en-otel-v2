@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Input } from './ui/input';
+import { Input } from '../ui/input';
 import Image from 'next/image';
 import Link from 'next/link';
 import { authenticate } from '@/lib/actions/user.action';
