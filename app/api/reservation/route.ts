@@ -1,5 +1,4 @@
 import { db } from '@/lib/db';
-import console from 'console';
 import { revalidatePath } from 'next/cache';
 import { NextResponse } from 'next/server';
 import * as z from 'zod';

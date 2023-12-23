@@ -52,8 +52,6 @@ export default function AddRoomForm() {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    console.log('clicked');
     setIsSubmitting(true);
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/room`, {

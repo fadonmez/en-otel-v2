@@ -5,7 +5,6 @@ import { db } from './lib/db';
 import bcrypt from 'bcrypt';
 
 const login = async (credentials: any) => {
-  console.log('in login:', credentials);
   try {
     const existingUser: any = await db.user.findUnique({
       where: {
@@ -16,8 +15,6 @@ const login = async (credentials: any) => {
     if (!existingUser) {
       throw new Error('user not found');
     }
-    console.log('existingUser:', existingUser);
-    console.log('credentials:', credentials);
 
     const passwordMatch = await bcrypt.compare(
       credentials.password,
@@ -46,7 +43,6 @@ export const { signIn, signOut, auth } = NextAuth({
       async authorize(credentials) {
         try {
           const user = await login(credentials);
-          console.log('user:', user);
           return user;
         } catch (error) {
           console.log('at catch', error);

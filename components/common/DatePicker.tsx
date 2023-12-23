@@ -64,7 +64,10 @@ export function DatePickerWithRange({
         router.push('/profile');
       }
       if (!res.ok) {
-        console.log('not ok');
+        toast({
+          title: 'Rezervasyon işlemi sırasında bir hata meydana geldi !',
+          variant: 'destructive',
+        });
       }
     } catch (error) {
       console.log(error);

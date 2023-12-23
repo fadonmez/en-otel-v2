@@ -31,7 +31,6 @@ const ReservationCard = ({ reservation }: any) => {
           },
         }
       );
-      console.log(res);
       if (res.ok) {
         toast({
           title: 'Rezervasyon başarıyla iptal edildi',
@@ -67,17 +66,15 @@ const ReservationCard = ({ reservation }: any) => {
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
-              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+              <AlertDialogTitle>Emin misin ?</AlertDialogTitle>
               <AlertDialogDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
+                Bu işlem geri alınamaz. Bu işlemi gerçekleştirmek istediğinize
+                emin misiniz ?
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction onClick={handleClick}>
-                Continue
-              </AlertDialogAction>
+              <AlertDialogCancel>İptal</AlertDialogCancel>
+              <AlertDialogAction onClick={handleClick}>Devam</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
